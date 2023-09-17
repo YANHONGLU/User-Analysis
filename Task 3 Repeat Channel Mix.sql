@@ -2,7 +2,7 @@ select case when utm_source is null and http_referer in ('https://www.gsearch.co
             when utm_campaign='nonbrand' then 'paid_nonbrand'
             when utm_campaign='brand' then 'paid_brand' 
             when utm_source is null and http_referer is null then 'direct_type_in'
-            when utm_source='sicialbook' then 'paid_social'
+            when utm_source='socialbook' then 'paid_social'
 		end as channel_group,
         count(case when is_repeat_session= 0 then website_session_id else null end) as new_sessions,
         count(case when is_repeat_session= 1 then website_session_id else null end) as repeat_sessions
